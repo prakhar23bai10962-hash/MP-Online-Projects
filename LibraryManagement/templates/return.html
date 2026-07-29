@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Return Book</h2>
+    <div class="card">
+        <div class="card-header">
+            <strong>{{ record.book.title }}</strong>
+        </div>
+        <div class="card-body">
+            <p><strong>Borrower Name:</strong> {{ record.borrower_name }}</p>
+            <p><strong>Borrow Date:</strong> {{ record.borrow_date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+            <form action="{{ url_for('borrow_return', borrowRecordId=record.id) }}" method="post">
+                <button type="submit" class="btn btn-success">Confirm Return</button>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

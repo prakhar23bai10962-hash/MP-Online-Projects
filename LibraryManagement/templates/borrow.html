@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Borrow Book</h2>
+    <div class="card">
+        <div class="card-header">
+            <strong>{{ book.title }}</strong>
+        </div>
+        <div class="card-body">
+            <form action="{{ url_for('borrow_create', bookId=book.id) }}" method="post">
+                <div class="mb-3">
+                    <label for="BorrowerName" class="form-label">Borrower Name</label>
+                    <input type="text" name="BorrowerName" id="BorrowerName" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="BorrowerEmail" class="form-label">Borrower Email</label>
+                    <input type="email" name="BorrowerEmail" id="BorrowerEmail" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="Phone" class="form-label">Phone</label>
+                    <input type="text" name="Phone" id="Phone" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Borrow</button>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

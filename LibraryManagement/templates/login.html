@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center mb-5 mt-5">
+    <div class="card shadow" style="width: 400px; border: none; border-radius: 8px;">
+        <div class="card-header bg-primary text-white text-center py-3" style="border-top-left-radius: 8px; border-top-right-radius: 8px;">
+            <h5 class="mb-0 fw-bold"><i class="bi bi-person-badge"></i> System Login</h5>
+        </div>
+        <div class="card-body p-4 bg-white" style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+            <form action="{{ url_for('login') }}" method="POST">
+                <div class="mb-3">
+                    <label for="role" class="form-label fw-bold text-dark" style="font-size: 0.9rem;">Select Role Account</label>
+                    <select class="form-select" id="role" name="role" style="background-color: #fff; border: 1px solid #dee2e6;">
+                        <option value="member">Member (member@example.com)</option>
+                        <option value="librarian">Librarian (librarian@example.com)</option>
+                        <option value="admin">Admin (admin@example.com)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-bold text-dark" style="font-size: 0.9rem;">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" value="member@example.com" style="background-color: #fff; border: 1px solid #dee2e6;">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label fw-bold text-dark" style="font-size: 0.9rem;">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" value="password" style="background-color: #f8f9fa; border: 1px solid #b6d4fe;">
+                </div>
+                <div class="d-grid mt-2">
+                    <button type="submit" class="btn btn-primary d-block py-2 fw-bold">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

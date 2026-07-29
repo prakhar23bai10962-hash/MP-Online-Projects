@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-info">Book Already Returned</h1>
+    <p class="lead">
+        The borrow record for this book has already been returned.
+    </p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Book List</a>
+</div>
+{% endblock %}
